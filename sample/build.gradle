@@ -2,11 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "21.1.2"
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         applicationId "com.dgreenhalgh.android.simpleitemdecorationsample"
         minSdkVersion 7
+        //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -21,7 +22,9 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleDependency
     compile 'com.android.support:recyclerview-v7:23.1.1'
+    //noinspection GradleDependency
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile project(':simpleitemdecoration')
 }
