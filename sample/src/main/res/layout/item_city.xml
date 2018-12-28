@@ -14,10 +14,12 @@
         android:layout_height="wrap_content"
         android:background="@android:color/holo_green_dark"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/tv_city"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription"/>
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/london"/>
 
     <TextView
         android:id="@+id/tv_city"
@@ -28,6 +30,7 @@
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Paul"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
