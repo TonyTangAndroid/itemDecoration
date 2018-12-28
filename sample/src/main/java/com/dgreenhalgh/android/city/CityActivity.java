@@ -1,11 +1,10 @@
-package com.dgreenhalgh.android.simpleitemdecorationsample.controller;
+package com.dgreenhalgh.android.city;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import com.dgreenhalgh.android.simpleitemdecoration.grid.GridDividerItemDecoration;
 import com.dgreenhalgh.android.simpleitemdecorationsample.R;
-import com.dgreenhalgh.android.simpleitemdecorationsample.model.SampleDataBank;
 
 import java.util.List;
 
@@ -27,11 +26,11 @@ public class CityActivity extends AppCompatActivity {
 
     private void initRecyclerView() {
         RecyclerView recycler_view = findViewById(R.id.recycler_view);
-        List<String> sampleStringList = SampleDataBank.getSampleData();
+        List<City> list = CityBank.getSampleData();
         Drawable dividerDrawable = ContextCompat.getDrawable(this, R.drawable.divider_sample);
         GridDividerItemDecoration dividerItemDecoration = new GridDividerItemDecoration(dividerDrawable, dividerDrawable, NUM_COLUMNS);
         recycler_view.addItemDecoration(dividerItemDecoration);
         recycler_view.setLayoutManager(new GridLayoutManager(this, NUM_COLUMNS));
-        recycler_view.setAdapter(new CityAdapter(sampleStringList, this));
+        recycler_view.setAdapter(new CityAdapter(list, this));
     }
 }

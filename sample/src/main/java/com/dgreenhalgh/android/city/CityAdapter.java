@@ -1,4 +1,4 @@
-package com.dgreenhalgh.android.simpleitemdecorationsample.controller;
+package com.dgreenhalgh.android.city;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -15,10 +15,10 @@ import androidx.recyclerview.widget.RecyclerView;
 public class CityAdapter extends RecyclerView.Adapter<CityHolder> {
 
     private final Context context;
-    private List<String> mSampleStringList;
+    private List<City> list;
 
-    public CityAdapter(List<String> sampleStringList, Context context) {
-        mSampleStringList = sampleStringList;
+    public CityAdapter(List<City> list, Context context) {
+        this.list = list;
         this.context = context;
     }
 
@@ -31,11 +31,11 @@ public class CityAdapter extends RecyclerView.Adapter<CityHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull CityHolder holder, int position) {
-        holder.bind(mSampleStringList.get(position));
+        holder.bind(list.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return mSampleStringList.size();
+        return list.size();
     }
 }
