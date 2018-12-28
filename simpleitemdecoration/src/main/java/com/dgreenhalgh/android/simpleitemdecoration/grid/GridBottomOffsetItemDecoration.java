@@ -3,8 +3,9 @@ package com.dgreenhalgh.android.simpleitemdecoration.grid;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Adds an offset to the bottom of a RecyclerView with a GridLayoutManager or
@@ -85,8 +86,10 @@ public class GridBottomOffsetItemDecoration extends RecyclerView.ItemDecoration 
 
         for (int i = childCount - lastRowChildCount; i < childCount; i++) {
             View child = parent.getChildAt(i);
-            offsetDrawableTop = child.getBottom();
-            offsetDrawableBottom = offsetDrawableTop + mOffsetDrawable.getIntrinsicHeight();
+            if (child != null) {
+                offsetDrawableTop = child.getBottom();
+                offsetDrawableBottom = offsetDrawableTop + mOffsetDrawable.getIntrinsicHeight();
+            }
         }
 
         mOffsetDrawable.setBounds(parentLeft, offsetDrawableTop, parentRight, offsetDrawableBottom);
