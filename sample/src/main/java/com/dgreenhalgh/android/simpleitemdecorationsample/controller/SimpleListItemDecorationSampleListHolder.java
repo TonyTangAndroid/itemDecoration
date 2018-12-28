@@ -1,8 +1,9 @@
 package com.dgreenhalgh.android.simpleitemdecorationsample.controller;
 
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 public class SimpleListItemDecorationSampleListHolder extends RecyclerView.ViewHolder {
 

@@ -75,9 +75,13 @@ public class DividerControlsView extends LinearLayout {
 
     public interface OnVisibilityChangeListener {
         void onDividerVisibilityChange();
+
         void onStartOffsetVisibilityChange();
+
         void onStartDrawableOffsetVisibilityChange();
+
         void onEndOffsetVisibilityChange();
+
         void onEndDrawableOffsetVisibilityChange();
     }
 }

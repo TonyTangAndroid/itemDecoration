@@ -5,10 +5,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.dgreenhalgh.android.simpleitemdecoration.linear.DividerItemDecoration;
 import com.dgreenhalgh.android.simpleitemdecoration.linear.EndOffsetItemDecoration;
@@ -18,6 +14,11 @@ import com.dgreenhalgh.android.simpleitemdecorationsample.model.SampleDataBank;
 import com.dgreenhalgh.android.simpleitemdecorationsample.view.DividerControlsView;
 
 import java.util.List;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class VerticalLinearLayoutManagerSampleActivity extends AppCompatActivity {
@@ -35,6 +36,32 @@ public class VerticalLinearLayoutManagerSampleActivity extends AppCompatActivity
     private boolean mStartDrawableOffsetVisible;
     private boolean mEndOffsetVisible;
     private boolean mEndDrawableOffsetVisible;
+    private DividerControlsView.OnVisibilityChangeListener mOnVisibilityChangeListener = new DividerControlsView.OnVisibilityChangeListener() {
+        @Override
+        public void onDividerVisibilityChange() {
+            toggleDividerVisibility();
+        }
+
+        @Override
+        public void onStartOffsetVisibilityChange() {
+            toggleStartOffsetVisibility();
+        }
+
+        @Override
+        public void onStartDrawableOffsetVisibilityChange() {
+            toggleStartDrawableOffsetVisibility();
+        }
+
+        @Override
+        public void onEndOffsetVisibilityChange() {
+            toggleEndOffsetVisibility();
+        }
+
+        @Override
+        public void onEndDrawableOffsetVisibilityChange() {
+            toggleEndDrawableOffsetVisibility();
+        }
+    };
 
     public static Intent newIntent(Context context) {
         return new Intent(context, VerticalLinearLayoutManagerSampleActivity.class);
@@ -122,31 +149,4 @@ public class VerticalLinearLayoutManagerSampleActivity extends AppCompatActivity
             mEndDrawableOffsetVisible = true;
         }
     }
-
-    private DividerControlsView.OnVisibilityChangeListener mOnVisibilityChangeListener = new DividerControlsView.OnVisibilityChangeListener() {
-        @Override
-        public void onDividerVisibilityChange() {
-            toggleDividerVisibility();
-        }
-
-        @Override
-        public void onStartOffsetVisibilityChange() {
-            toggleStartOffsetVisibility();
-        }
-
-        @Override
-        public void onStartDrawableOffsetVisibilityChange() {
-            toggleStartDrawableOffsetVisibility();
-        }
-
-        @Override
-        public void onEndOffsetVisibilityChange() {
-            toggleEndOffsetVisibility();
-        }
-
-        @Override
-        public void onEndDrawableOffsetVisibilityChange() {
-            toggleEndDrawableOffsetVisibility();
-        }
-    };
 }

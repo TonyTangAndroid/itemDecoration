@@ -3,9 +3,11 @@ package com.dgreenhalgh.android.simpleitemdecoration.linear;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.view.View;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.view.View;
 
 /**
  * Adds interior dividers to a RecyclerView with a LinearLayoutManager or its
@@ -31,10 +33,12 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
      *
      * @param canvas The {@link Canvas} onto which dividers will be drawn
      * @param parent The RecyclerView onto which dividers are being added
-     * @param state The current RecyclerView.State of the RecyclerView
+     * @param state  The current RecyclerView.State of the RecyclerView
      */
     @Override
-    public void onDraw(Canvas canvas, RecyclerView parent, RecyclerView.State state) {
+    public void onDraw(@NonNull Canvas canvas,
+                       @NonNull RecyclerView parent,
+                       @NonNull RecyclerView.State state) {
         if (mOrientation == LinearLayoutManager.HORIZONTAL) {
             drawHorizontalDividers(canvas, parent);
         } else if (mOrientation == LinearLayoutManager.VERTICAL) {
@@ -48,12 +52,15 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
      *
      * @param outRect The {@link Rect} of offsets to be added around the child
      *                view
-     * @param view The child view to be decorated with an offset
-     * @param parent The RecyclerView onto which dividers are being added
-     * @param state The current RecyclerView.State of the RecyclerView
+     * @param view    The child view to be decorated with an offset
+     * @param parent  The RecyclerView onto which dividers are being added
+     * @param state   The current RecyclerView.State of the RecyclerView
      */
     @Override
-    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+    public void getItemOffsets(@NonNull Rect outRect,
+                               @NonNull View view,
+                               @NonNull RecyclerView parent,
+                               @NonNull RecyclerView.State state) {
         super.getItemOffsets(outRect, view, parent, state);
 
         if (parent.getChildAdapterPosition(view) == 0) {

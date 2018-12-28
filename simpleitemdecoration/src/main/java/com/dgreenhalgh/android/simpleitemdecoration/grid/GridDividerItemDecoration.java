@@ -3,8 +3,10 @@ package com.dgreenhalgh.android.simpleitemdecoration.grid;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Adds interior dividers to a RecyclerView with a GridLayoutManager.
@@ -39,7 +41,9 @@ public class GridDividerItemDecoration extends RecyclerView.ItemDecoration {
      * @param state  The current RecyclerView.State of the RecyclerView
      */
     @Override
-    public void onDraw(Canvas canvas, RecyclerView parent, RecyclerView.State state) {
+    public void onDraw(@NonNull Canvas canvas,
+                       @NonNull RecyclerView parent,
+                       @NonNull RecyclerView.State state) {
         drawHorizontalDividers(canvas, parent);
         drawVerticalDividers(canvas, parent);
 
@@ -55,7 +59,10 @@ public class GridDividerItemDecoration extends RecyclerView.ItemDecoration {
      * @param state   The current RecyclerView.State of the RecyclerView
      */
     @Override
-    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+    public void getItemOffsets(@NonNull Rect outRect,
+                               @NonNull View view,
+                               @NonNull RecyclerView parent,
+                               @NonNull RecyclerView.State state) {
         super.getItemOffsets(outRect, view, parent, state);
 
         int childAdapterPosition = parent.getChildAdapterPosition(view);

@@ -1,6 +1,5 @@
 package com.dgreenhalgh.android.simpleitemdecorationsample.controller;
 
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +7,8 @@ import android.view.ViewGroup;
 import com.dgreenhalgh.android.simpleitemdecorationsample.R;
 
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 public class SimpleItemDecorationSampleListAdapter extends RecyclerView.Adapter<SimpleListItemDecorationSampleListHolder> {
 
